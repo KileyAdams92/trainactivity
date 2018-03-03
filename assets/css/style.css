@@ -29,3 +29,9 @@ h1 p {
 /* .allForms {
   background: rgba(243, 247, 253, 0.5);
 } */
+
+@media screen and(max-width: 983px) {
+  .card {
+    margin-top: 10%;
+  }
+}
