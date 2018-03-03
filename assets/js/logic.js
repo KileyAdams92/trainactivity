@@ -44,14 +44,49 @@ $(function() {
     });
   });
 
-  // database.ref().on("child_added", function (snapshot) {
-  //     var tr = $("<tr>");
+  database.ref().on("child_added", function(snapshot) {
+    var tr = $("<tr>");
+    $("tbody").append(tr);
 
-  //     tr.append("<td>" + snapshot.val().name + "</td>");
-  //     tr.append("<td>" + snapshot.val().startDate + "</td>");
-  //     tr.append("<td>" + snapshot.val().monthsWorked + "</td>");
-  //     tr.append("<td>" + snapshot.val().monthlyRate + "</td>");
-  //     tr.append("<td>" + snapshot.val().totalBilled + "</td>");
+    tr.append("<td>" + snapshot.val().trainName + "</td>");
+    tr.append("<td>" + snapshot.val().destination + "</td>");
+    tr.append("<td>" + snapshot.val().frequency + "</td>");
+    tr.append("<td>" + snapshot.val().firstTrain + "</td>");
 
-  //     console.log(snapshot);
+    console.log(snapshot);
+  });
+  //   var tFrequency = 7;
+
+  //     // Time is 3:30 AM
+  //     var firstTime = "05:00";
+
+  //     // First Time (pushed back 1 year to make sure it comes before current time)
+  //     var firstTimeConverted = moment(firstTime, "HH:mm").subtract(1, "years");
+  //     // console.log(moment(firstTime, "HH:mm"));
+  //     // console.log(firstTimeConverted);
+
+  //     // Current Time
+  //     var currentTime = moment();
+  //     // console.log("CURRENT TIME: " + moment(currentTime).format("hh:mm"));
+
+  //     // Difference between the times
+  //     var diffTime = moment().diff(moment(firstTimeConverted), "minutes");
+  //     console.log("DIFFERENCE IN TIME: " + diffTime);
+
+  //     // Time apart (remainder)
+  //     var tRemainder = diffTime % tFrequency;
+  //     console.log(tRemainder);
+
+  //     // Minute Until Train
+  //     var tMinutesTillTrain = tFrequency - tRemainder;
+  //     console.log("MINUTES TILL TRAIN: " + tMinutesTillTrain);
+
+  //     // Next Train
+  //     var nextTrain = moment().add(tMinutesTillTrain, "minutes");
+  //     console.log("ARRIVAL TIME: " + moment(nextTrain).format("hh:mm"));
+  //   </script>
+
+  // </body>
+
+  // </html>
 });
