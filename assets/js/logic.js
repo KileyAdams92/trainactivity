@@ -50,27 +50,30 @@ $(function() {
     var firstTrain = snapshot.val().firstTrain;
     var tr = $("<tr>");
     $("tbody").append(tr);
-    console.log(snapshot.val());
+
     tr.append("<td>" + trainName + "</td>");
     tr.append("<td>" + destination + "</td>");
     tr.append("<td>" + frequency + "</td>");
 
-    var firstTrainConverted = moment(firstTrain, "HH:mm").subtract("1, years");
-    console.log(firstTrainConverted);
+    var firstTrainConverted = moment(firstTrain, "HH:mm").subtract(1, "years");
+    console.log("First Train Converted: " + firstTrainConverted.format());
     var currentTime = moment();
 
     var diffTime = moment().diff(moment(firstTrainConverted), "minutes");
+    console.log("Difftime: " + diffTime);
 
     var remainder = diffTime % frequency;
 
     var tMinutesTillTrain = frequency - remainder;
     moment(tMinutesTillTrain).minutes();
+    console.log("Minutes until train: " + tMinutesTillTrain);
 
     var nextTrain = moment()
       .add(tMinutesTillTrain, "minutes")
       .format("hh:mm a");
     tr.append("<td>" + nextTrain + "</td>");
     tr.append("<td>" + tMinutesTillTrain + "</td>");
+    console.log("Next train: " + nextTrain);
 
     $("#train-name").val("");
     $("#destination").val("");
