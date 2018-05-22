@@ -5,8 +5,9 @@ This is a simple Train Scheduler web application designed to allow train station
 
 Motivation
 During the course of studying web development through the University of Kansas, I learned the importance of utilizing new libraries and technologies. Using Firebase as a database was the first initial step into backend development. During this project I also learned more about how computers format time and the importance of using a library similar to Moment.js.
-Screenshots
 
+Screenshots
+[![Capture.png](https://s9.postimg.cc/nalv9uvkf/Capture.png)](https://postimg.cc/image/vg3x80jt7/)
  
 Tech/framework used
 Built with
